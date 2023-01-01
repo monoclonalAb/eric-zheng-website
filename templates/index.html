@@ -5,57 +5,366 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>EZ</title>
+    <title>Eric Zheng</title>
     <meta name="description" content="Eric Zheng's personal website">
     <meta name="author" content="Eric Zheng">
     
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/bootstrap/dist/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="/static/css/custom.css">
+    <link rel="stylesheet" href="/static/node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <!--link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/bootstrap/dist/css/bootstrap.css') }}"-->
     
+    <style>
+      .Eric{
+        position: absolute;
+        left: 0px;
+        animation: fromRight 5s ease;
+      }
+      @keyframes fromLeft {
+        0%   {
+          opacity: 0%;
+          transform: translateX(100%)
+        }
+        100%  {
+          opacity: 100%;
+          transform: translateX(0%)
+        }
+      }
+
+      .Zheng{
+        position: absolute;
+        left: 0px;
+        animation: fromLeft 5s ease;
+      }
+      @keyframes fromRight {
+        0%   {
+          opacity: 0%;
+          transform: translateX(-100%);
+        }
+        100%  {
+          opacity: 100%;
+          transform: translateX(0%);
+        }
+      }
+      
+      .scrollDown{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        opacity: 100%;
+        animation: arrowKeyBobbing 5s 5s ease forwards infinite;
+      }
+      @keyframes arrowKeyBobbing {
+        0%   {
+          opacity: 10%;
+          transform: translateY(-9%);
+        }
+        50%  {
+          opacity: 50%;
+          transform: translateY(0%);
+        }
+        100%  {
+          opacity: 10%;
+          transform: translateY(-9%);
+        }
+      }
+    </style>
   </head>
 
   <body class="bg-teal-100">
+    <header style="height: 100vh" class="cover-container-fluid bg-teal-400">
+      <div class="container-fluid border-bottom border-5 rounded-1 border-success bg-teal-300" style="height: 100%; width: 100%">
+        <div class="bg-teal-200" style="height: 100%">
+          <svg xmlns="http://www.w3.org/2000/svg" height="80%" width="100%" style="transform: translateY(10%);" viewBox="0 0 365 156">
+            <g class="Eric">  
+              <path id="E"fill="#13795b" stroke="black" stroke-width="0"
+                d="M 0.00,0.00
+                  C 0.00,0.00 65.00,0.00 65.00,0.00
+                    65.00,0.00 65.00,16.00 65.00,16.00
+                    65.00,16.00 0.00,16.00 0.00,16.00
+                    0.00,16.00 0.00,0.00 0.00,0.00 Z
+                  M 3.00,29.00
+                  C 3.00,29.00 3.00,26.00 3.00,26.00
+                    3.00,26.00 65.00,26.00 65.00,26.00
+                    65.00,26.00 65.00,43.00 65.00,43.00
+                    65.00,43.00 19.00,43.00 19.00,43.00
+                    19.00,43.00 19.00,45.99 19.00,45.99
+                    19.00,45.99 16.00,46.00 16.00,46.00
+                    16.00,46.00 16.00,54.00 16.00,54.00
+                    16.00,54.00 18.99,54.00 18.99,54.00
+                    18.99,54.00 19.00,57.00 19.00,57.00
+                    19.00,57.00 65.00,57.00 65.00,57.00
+                    65.00,57.00 65.00,73.00 65.00,73.00
+                    65.00,73.00 3.00,73.00 3.00,73.00
+                    3.00,73.00 3.00,70.00 3.00,70.00
+                    3.00,70.00 0.00,70.00 0.00,70.00
+                    0.00,70.00 0.00,29.00 0.00,29.00
+                    0.00,29.00 3.00,29.00 3.00,29.00 Z"
+                    />
+              <path id="R"fill="#13795b" stroke="black" stroke-width="0"
+                d="M 75.00,0.00
+                  C 75.00,0.00 137.00,0.00 137.00,0.00
+                    137.00,0.00 140.00,3.00 140.00,3.00
+                    140.00,3.00 140.00,39.00 140.00,39.00
+                    140.00,39.00 137.00,39.00 137.00,39.00
+                    137.00,39.00 137.00,42.00 137.00,42.00
+                    137.00,42.00 125.00,42.00 125.00,42.00
+                    125.00,42.00 125.00,55.00 125.00,55.00
+                    125.00,55.00 128.00,55.00 128.00,55.00
+                    128.00,55.00 128.00,58.00 128.00,58.00
+                    128.00,58.00 140.00,58.00 140.00,58.00
+                    140.00,58.00 140.00,73.00 140.00,73.00
+                    140.00,73.00 112.00,73.00 112.00,73.00
+                    112.00,73.00 112.00,70.00 112.00,70.00
+                    112.00,70.00 109.00,70.00 109.00,70.00
+                    109.00,70.00 109.00,42.00 109.00,42.00
+                    109.00,42.00 93.00,42.00 93.00,42.00
+                    93.00,42.00 93.00,45.00 93.00,45.00
+                    93.00,45.00 90.00,45.00 90.00,45.00
+                    90.00,45.00 90.00,73.00 90.00,73.00
+                    90.00,73.00 75.00,73.00 75.00,73.00
+                    75.00,73.00 75.00,29.00 75.00,29.00
+                    75.00,29.00 78.00,29.00 78.00,29.00
+                    78.00,29.00 78.00,26.00 78.00,26.00
+                    78.00,26.00 122.00,26.00 122.00,26.00
+                    122.00,26.00 122.00,23.02 122.00,23.02
+                    122.00,23.02 125.00,23.00 125.00,23.00
+                    125.00,23.00 125.00,19.00 125.00,19.00
+                    125.00,19.00 122.00,18.98 122.00,18.98
+                    122.00,18.98 122.00,16.00 122.00,16.00
+                    122.00,16.00 75.00,16.00 75.00,16.00
+                    75.00,16.00 75.00,0.00 75.00,0.00 Z"
+                    />
+              <path id="I"fill="#13795b" stroke="black" stroke-width="0"
+                d="M 150.00,0.00
+                  C 150.00,0.00 165.00,0.00 165.00,0.00
+                    165.00,0.00 165.00,73.00 165.00,73.00
+                    165.00,73.00 150.00,73.00 150.00,73.00
+                    150.00,73.00 150.00,0.00 150.00,0.00 Z"
+                    />
+              <path id="C"fill="#13795b" stroke="black" stroke-width="0"
+                d="M 178.00,3.00
+                  C 178.00,3.00 178.00,0.00 178.00,0.00
+                    178.00,0.00 237.00,0.00 237.00,0.00
+                    237.00,0.00 237.00,3.00 237.00,3.00
+                    237.00,3.00 240.00,3.00 240.00,3.00
+                    240.00,3.00 240.00,29.00 240.00,29.00
+                    240.00,29.00 225.00,29.00 225.00,29.00
+                    225.00,29.00 225.00,19.00 225.00,19.00
+                    225.00,19.00 222.00,19.00 222.00,19.00
+                    222.00,19.00 222.00,16.00 222.00,16.00
+                    222.00,16.00 194.00,16.00 194.00,16.00
+                    194.00,16.00 194.00,19.00 194.00,19.00
+                    194.00,19.00 191.00,19.00 191.00,19.00
+                    191.00,19.00 191.00,54.00 191.00,54.00
+                    191.00,54.00 194.00,54.03 194.00,54.03
+                    194.00,54.03 194.00,57.00 194.00,57.00
+                    194.00,57.00 222.00,57.00 222.00,57.00
+                    222.00,57.00 222.00,54.01 222.00,54.01
+                    222.00,54.01 225.00,54.00 225.00,54.00
+                    225.00,54.00 225.00,45.00 225.00,45.00
+                    225.00,45.00 240.00,45.00 240.00,45.00
+                    240.00,45.00 240.00,70.00 240.00,70.00
+                    240.00,70.00 237.00,70.00 237.00,70.00
+                    237.00,70.00 237.00,73.00 237.00,73.00
+                    237.00,73.00 178.00,73.00 178.00,73.00
+                    178.00,73.00 178.00,70.00 178.00,70.00
+                    178.00,70.00 175.00,70.00 175.00,70.00
+                    175.00,70.00 175.00,3.00 175.00,3.00
+                    175.00,3.00 178.00,3.00 178.00,3.00 Z"
+                    />
+            </g>
+            <g class="Zheng"> 
+              <path id="Z"fill="#1aa179" stroke="black" stroke-width="0" transform="translate(-316, 83)"
+                d="M 316.00,0.00
+                  C 316.00,0.00 378.00,0.00 378.00,0.00
+                    378.00,0.00 378.00,3.00 378.00,3.00
+                    378.00,3.00 381.00,3.00 381.00,3.00
+                    381.00,3.00 381.00,40.00 381.00,40.00
+                    381.00,40.00 378.00,40.00 378.00,40.00
+                    378.00,40.00 378.00,43.00 378.00,43.00
+                    378.00,43.00 316.00,43.00 316.00,43.00
+                    316.00,43.00 316.00,29.00 316.00,29.00
+                    316.00,29.00 319.00,29.00 319.00,29.00
+                    319.00,29.00 319.00,26.00 319.00,26.00
+                    319.00,26.00 362.00,26.00 362.00,26.00
+                    362.00,26.00 362.00,23.00 362.00,23.00
+                    362.00,23.00 365.00,23.00 365.00,23.00
+                    365.00,23.00 365.00,19.00 365.00,19.00
+                    365.00,19.00 362.00,19.00 362.00,19.00
+                    362.00,19.00 362.00,16.00 362.00,16.00
+                    362.00,16.00 316.00,16.00 316.00,16.00
+                    316.00,16.00 316.00,0.00 316.00,0.00 Z
+                  M 316.00,57.00
+                  C 316.00,57.00 381.00,57.00 381.00,57.00
+                    381.00,57.00 381.00,73.00 381.00,73.00
+                    381.00,73.00 316.00,73.00 316.00,73.00
+                    316.00,73.00 316.00,57.00 316.00,57.00 Z"
+                    />
+              <path id="H"fill="#1aa179" stroke="black" stroke-width="0" transform="translate(-316, 83)"
+                d="M 391.00,0.00
+                  C 391.00,0.00 406.00,0.00 406.00,0.00
+                    406.00,0.00 406.00,23.00 406.00,23.00
+                    406.00,23.00 409.00,23.00 409.00,23.00
+                    409.00,23.00 409.00,26.00 409.00,26.00
+                    409.00,26.00 438.00,26.00 438.00,26.00
+                    438.00,26.00 438.00,23.00 438.00,23.00
+                    438.00,23.00 441.00,23.00 441.00,23.00
+                    441.00,23.00 441.00,0.00 441.00,0.00
+                    441.00,0.00 456.00,0.00 456.00,0.00
+                    456.00,0.00 456.00,73.00 456.00,73.00
+                    456.00,73.00 441.00,73.00 441.00,73.00
+                    441.00,73.00 441.00,45.00 441.00,45.00
+                    441.00,45.00 438.00,45.00 438.00,45.00
+                    438.00,45.00 438.00,42.00 438.00,42.00
+                    438.00,42.00 409.00,42.00 409.00,42.00
+                    409.00,42.00 409.00,46.00 409.00,46.00
+                    409.00,46.00 406.00,46.00 406.00,46.00
+                    406.00,46.00 406.00,73.00 406.00,73.00
+                    406.00,73.00 391.00,73.00 391.00,73.00
+                    391.00,73.00 391.00,0.00 391.00,0.00 Z"
+                    />
+              <path id="E"fill="#1aa179" stroke="black" stroke-width="0" transform="translate(-316, 83)"
+                d="M 466.00,0.00
+                  C 466.00,0.00 531.00,0.00 531.00,0.00
+                    531.00,0.00 531.00,16.00 531.00,16.00
+                    531.00,16.00 466.00,16.00 466.00,16.00
+                    466.00,16.00 466.00,0.00 466.00,0.00 Z
+                  M 470.00,26.00
+                  C 470.00,26.00 531.00,26.00 531.00,26.00
+                      531.00,26.00 531.00,43.00 531.00,43.00
+                      531.00,43.00 486.00,43.00 486.00,43.00
+                      486.00,43.00 486.00,46.00 486.00,46.00
+                      486.00,46.00 483.00,46.00 483.00,46.00
+                      483.00,46.00 483.00,54.00 483.00,54.00
+                      483.00,54.00 486.00,54.00 486.00,54.00
+                      486.00,54.00 486.00,57.00 486.00,57.00
+                      486.00,57.00 531.00,57.00 531.00,57.00
+                      531.00,57.00 531.00,73.00 531.00,73.00
+                      531.00,73.00 469.00,73.00 469.00,73.00
+                      469.00,73.00 469.00,70.00 469.00,70.00
+                      469.00,70.00 466.00,70.00 466.00,70.00
+                      466.00,70.00 466.00,30.00 466.00,30.00
+                      466.00,30.00 470.00,30.00 470.00,30.00
+                      470.00,30.00 470.00,26.00 470.00,26.00 Z"
+                    />
+              <path id="N"fill="#1aa179" stroke="black" stroke-width="0" transform="translate(-316, 83)"
+                d="M 541.00,0.00
+                  C 541.00,0.00 578.00,0.00 578.00,0.00
+                    578.00,0.00 578.00,3.00 578.00,3.00
+                    578.00,3.00 581.00,3.00 581.00,3.00
+                    581.00,3.00 581.00,55.00 581.00,55.00
+                    581.00,55.00 584.00,55.00 584.00,55.00
+                    584.00,55.00 584.00,58.00 584.00,58.00
+                    584.00,58.00 587.00,58.00 587.00,58.00
+                    587.00,58.00 587.00,55.00 587.00,55.00
+                    587.00,55.00 590.00,55.00 590.00,55.00
+                    590.00,55.00 590.00,0.00 590.00,0.00
+                    590.00,0.00 606.00,0.00 606.00,0.00
+                    606.00,0.00 606.00,70.00 606.00,70.00
+                    606.00,70.00 602.99,69.99 602.99,69.99
+                    602.99,69.99 603.00,73.00 603.00,73.00
+                    603.00,73.00 568.00,73.00 568.00,73.00
+                    568.00,73.00 568.00,70.00 568.00,70.00
+                    568.00,70.00 565.00,70.00 565.00,70.00
+                    565.00,70.00 565.00,20.00 565.00,20.00
+                    565.00,20.00 562.00,20.00 562.00,20.00
+                    562.00,20.00 562.00,16.00 562.00,16.00
+                    562.00,16.00 541.00,16.00 541.00,16.00
+                    541.00,16.00 541.00,0.00 541.00,0.00 Z
+                  M 541.00,26.00
+                  C 541.00,26.00 557.00,26.00 557.00,26.00
+                    557.00,26.00 557.00,73.00 557.00,73.00
+                    557.00,73.00 541.00,73.00 541.00,73.00
+                    541.00,73.00 541.00,26.00 541.00,26.00 Z"
+                    />
+              <path id="G"fill="#1aa179" stroke="black" stroke-width="0" transform="translate(-316, 83)"
+                d="M 619.00,3.00
+                  C 619.00,3.00 619.00,0.00 619.00,0.00
+                    619.00,0.00 681.00,0.00 681.00,0.00
+                    681.00,0.00 681.00,16.00 681.00,16.00
+                    681.00,16.00 635.00,16.00 635.00,16.00
+                    635.00,16.00 635.00,19.00 635.00,19.00
+                    635.00,19.00 632.00,19.00 632.00,19.00
+                    632.00,19.00 632.00,54.00 632.00,54.00
+                    632.00,54.00 635.00,54.00 635.00,54.00
+                    635.00,54.00 635.00,57.00 635.00,57.00
+                    635.00,57.00 663.00,57.00 663.00,57.00
+                    663.00,57.00 663.00,54.00 663.00,54.00
+                    663.00,54.00 666.00,54.00 666.00,54.00
+                    666.00,54.00 666.00,43.00 666.00,43.00
+                    666.00,43.00 663.00,43.00 663.00,43.00
+                    663.00,43.00 663.00,40.00 663.00,40.00
+                    663.00,40.00 642.00,40.00 642.00,40.00
+                    642.00,40.00 642.00,26.00 642.00,26.00
+                    642.00,26.00 678.00,26.00 678.00,26.00
+                    678.00,26.00 678.00,29.00 678.00,29.00
+                    678.00,29.00 681.00,29.00 681.00,29.00
+                    681.00,29.00 681.00,70.00 681.00,70.00
+                    681.00,70.00 678.00,70.00 678.00,70.00
+                    678.00,70.00 678.00,73.00 678.00,73.00
+                    678.00,73.00 619.00,73.00 619.00,73.00
+                    619.00,73.00 619.00,70.00 619.00,70.00
+                    619.00,70.00 616.00,70.00 616.00,70.00
+                    616.00,70.00 616.00,3.00 616.00,3.00
+                    616.00,3.00 619.00,3.00 619.00,3.00 Z"
+                    />
+            </g>
+            <g class="scrollDown">
+              <path fill="#13795b" transform="translate(100, 140)" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </header>
+    
+    
+
     <main>
-      <div class="container-fluid bg-teal-200">
-        <div class="container-xxl sticky-top border-bottom border-5 rounded-1 border-success">
-          <header class="d-flex justify-content-left py-3 ">
-            <a href="/" class="m-2">placeholder for SVG logo</a>
-          </header>
+      <div class="container py-4">
+        <div class="p-5 mb-4 bg-light rounded-3">
+          <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Eric Zheng</h1>
+            <p class="col-md-8 fs-4">Junior Developer</p>
+          </div>
+        </div>
+    
+        <div class="row align-items-md-stretch">
+          <div class="col-md-6">
+            <div class="h-100 p-5 bg-green-800 rounded-3">
+              <h2 class="text-green-100 fw-bold">About Me:</h2>
+              <p class="text-green-200">I am an 18 year old junior developer from Auckland, NZ, that is currently trying to develop front-end development and graphic design skills needed to create unique webapps</p>
+              <button class="btn btn-outline-light" type="button">Projects:</button>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="h-100 p-5 bg-light border rounded-3">
+              <h2>Experience</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quas aperiam labore corporis ratione repudiandae sint, molestias pariatur ad est veritatis eum suscipit sed quos ut dignissimos magni dolorum fugiat!</p>
+              <button class="btn btn-outline-secondary" type="button">Portfolio</button>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+        <div class="container py-4">
+          <div class="col-md-6">
+            <div class="h-100 p-5 bg-light border rounded-3">
+              <h2>Experience</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quas aperiam labore corporis ratione repudiandae sint, molestias pariatur ad est veritatis eum suscipit sed quos ut dignissimos magni dolorum fugiat!</p>
+              <button class="btn btn-outline-secondary" type="button">Portfolio</button>
+            </div>
+          </div>
         </div>
       </div>
-      
-      
-
     </main>
-    <div class="container py-4">
-      <div class="p-5 mb-4 bg-light rounded-3">
-        <div class="container-fluid py-5">
-          <h1 class="display-5 fw-bold">Eric Zheng</h1>
-          <p class="col-md-8 fs-4">Junior Developer</p>
-        </div>
-      </div>
-  
-      <div class="row align-items-md-stretch">
-        <div class="col-md-6">
-          <div class="h-100 p-5 bg-green-800 rounded-3">
-            <h2 class="text-green-100 fw-bold">About Me:</h2>
-            <p class="text-green-200">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae sed adipisci, cum distinctio sunt, deleniti quod aspernatur quaerat repellat deserunt labore, velit fuga. Earum suscipit voluptas unde sapiente similique.</p>
-            <button class="btn btn-outline-light" type="button">Projects:</button>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="h-100 p-5 bg-light border rounded-3">
-            <h2>Experience</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quas aperiam labore corporis ratione repudiandae sint, molestias pariatur ad est veritatis eum suscipit sed quos ut dignissimos magni dolorum fugiat!</p>
-            <button class="btn btn-outline-secondary" type="button">Portfolio</button>
-          </div>
-        </div>
-      </div>
-  
-      <footer class="pt-3 mt-4 border-5 border-top border-success rounded-1">
 
-      </footer>
-    </div>
+    <footer class="pt-3 mt-4 border-5 border-top border-success rounded-1">
+
+    </footer>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
   </body>
 </html>

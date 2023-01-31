@@ -1,0 +1,574 @@
+/* Resizing for phones! */
+@media only screen and (max-width: 992px) and (min-height:500px) {
+    @keyframes fromRight {
+        0%   {
+        opacity: 0%;
+        transform: translateY(10%) translateX(-95%) scale(0.8);
+        }
+        100%  {
+        opacity: 100%;
+        transform: translateY(10%) translateX(10%) scale(0.8);
+        }
+    }
+    @keyframes fromLeft {
+        0%   {
+        opacity: 0%;
+        transform: translateY(10%) translateX(135%) scale(0.8);
+        }
+        100%  {
+        opacity: 100%;
+        transform: translateY(10%) translateX(10%) scale(0.8);
+        }
+    }
+    @keyframes movingLineTop {
+        0% {
+        opacity: 0%;
+        stroke-dashoffset: 130%;
+        stroke-dasharray: 130%;
+        }
+        75% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 130%;
+        }
+        100% {
+        opacity: 100%;
+        }
+    }
+    @keyframes movingLineBottom {
+        0% {
+        opacity: 0%;
+        stroke-dashoffset: -130%;
+        stroke-dasharray: 130%;
+        transform: translate(0, 78px);
+        }
+        75% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 130%;
+        transform: translate(0, 78px);
+        }
+        100% {
+        opacity: 100%;
+        transform: translate(0, 78px);
+        }
+    }
+    @keyframes textRising{
+        0% {
+        opacity: 0%;
+        transform: translate(-344px, 100px) scale(2);
+        }
+        80% {
+        opacity: 0%;
+        }
+        100%{
+        transform: translate(-344px, -125px) scale(2);
+        opacity: 100%;
+        }
+    }
+    @keyframes waveRising {
+        0% {
+        opacity: 0%;
+        transform: translate(0px, 100px);
+        }
+        80% {
+        opacity: 0%;
+        }
+        100%{
+        transform: translate(0px, 0px);
+        opacity: 100%;
+        }
+    }
+    @keyframes waveLeft {
+        0% {
+        opacity: 100%;
+        transform: translate(0px, 0px);
+
+        }
+        50% {
+        opacity: 100%;
+        transform: translate(-50px, 0px);
+
+        }
+        100%{
+        transform: translate(0px, 0px);
+        opacity: 100%;
+        }
+    }
+    @keyframes waveRight {
+        0% {
+        opacity: 100%;
+        transform: translate(0px, 0px);
+
+        }
+        50% {
+        opacity: 100%;
+        transform: translate(50px, 0px);
+
+        }
+        100%{
+        transform: translate(0px, 0px);
+        opacity: 100%;
+        }
+    }
+    @keyframes navigationAppear{
+        0%{
+        opacity: 0%;
+        }
+        100%{
+        opacity: 100%;
+        }
+    }
+}
+
+/* Resizing for devices like computers and iPads! */
+@media only screen and ((min-width: 992px) or (max-height: 500px)) {
+    @keyframes fromRight {
+        0%   {
+        opacity: 0%;
+        transform: translate(-90%, 10%) scale(0.3);
+        }
+        100%  {
+        opacity: 100%;
+        transform: translate(10%, 10%) scale(0.3);
+        }
+    }
+    @keyframes fromLeft {
+        0%   {
+        opacity: 0%;
+        transform: translate(140%, 10%) scale(0.3);
+        }
+        100%  {
+        opacity: 100%;
+        transform: translate(10%, 10%) scale(0.3);
+        }
+    }
+    @keyframes movingLineTop {
+        0% {
+        opacity: 0%;
+        stroke-dashoffset: 130%;
+        stroke-dasharray: 130%;
+        }
+        75% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 130%;
+        }
+        100% {
+        opacity: 100%;
+        }
+    }
+    @keyframes movingLineBottom {
+        0% {
+        opacity: 0%;
+        stroke-dashoffset: -130%;
+        stroke-dasharray: 130%;
+        }
+        75% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: 130%;
+        opacity: 75%;
+        }
+        100% {
+        opacity: 100%;
+        
+        }
+    }
+    @keyframes textRising{
+        0% {
+        opacity: 0%;
+        transform: translate(0px, 100px);
+        }
+        80% {
+        opacity: 0%;
+        }
+        100%{
+        transform: translate(0px, 0px);
+        opacity: 100%;
+        }
+    }
+    @keyframes waveRising {
+        0% {
+        opacity: 0%;
+        transform: translate(0px, 100px);
+        }
+        80% {
+        opacity: 0%;
+        }
+        100%{
+        transform: translate(0px, 0px);
+        opacity: 100%;
+        }
+    }
+    @keyframes waveLeft {
+        0% {
+        opacity: 100%;
+        transform: translate(0px, 0px);
+
+        }
+        50% {
+        opacity: 100%;
+        transform: translate(-50px, 0px);
+
+        }
+        100%{
+        transform: translate(0px, 0px);
+        opacity: 100%;
+        }
+    }
+    @keyframes waveRight {
+        0% {
+        opacity: 100%;
+        transform: translate(0px, 0px);
+
+        }
+        50% {
+        opacity: 100%;
+        transform: translate(50px, 0px);
+
+        }
+        100%{
+        transform: translate(0px, 0px);
+        opacity: 100%;
+        }
+    }
+    @keyframes navigationAppear{
+        0%{
+        opacity: 0%;
+        }
+        100%{
+        opacity: 100%;
+        }
+    }
+}
+
+/* General CSS declarations */
+html{
+    scroll-behavior:smooth;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+main{
+    height: 200vh;
+    overflow-y: hidden;
+    background-color: #97d2bb;
+}
+
+h2{
+    color: #06281e;
+    text-decoration-line:underline;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+p{
+    color: #0d503c;
+}
+
+/* For centered elements */
+
+
+/*Background*/
+.background{
+background: 
+    linear-gradient(to right, #d2f4ea, #a6e9d5) top,
+    linear-gradient(to bottom, #d2f4ea, #d2f4ea) left,
+    radial-gradient(circle at top left, teal, #d2f4ea) top left,
+    radial-gradient(circle at top right, teal, #d2f4ea) top right,
+    radial-gradient(circle at bottom, #a6e9d5, #d2f4ea) bottom;
+    background-size: 100% 100%;
+    background-repeat: repeat;
+}
+
+/*Wave Animation*/
+
+.backgroundWave{
+    position: absolute;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.wave{
+    opacity: 0%;
+}
+
+.wave:nth-child(1){
+    animation: waveRising 1s 2.8s ease-in-out forwards, waveRight 1.7s 3.8s ease-in-out forwards infinite;
+}
+
+.wave:nth-child(2){
+    animation: waveRising 1s 2.6s ease-in-out forwards, waveLeft 3s 3.6s ease-in-out forwards infinite;
+}
+
+.wave:nth-child(3){
+    animation: waveRising 1s 2.4s ease-in-out forwards, waveRight 1.5s 3.4s ease-in-out forwards infinite;
+}
+
+.wave:nth-child(4){
+    animation: waveRising 1s 2.2s ease-in-out forwards, waveLeft 2s 3.2s ease-in-out forwards infinite;
+}
+
+.wave:nth-child(5){
+    animation: waveRising 1s 2s ease-in-out forwards, waveLeft 1.2s 3s ease-in-out forwards infinite;
+}
+
+.waveTop{
+    opacity: 0%;
+    animation: waveRising 1s 2s ease-in-out forwards, waveLeft 1.2s 3s ease-in-out forwards infinite;
+}
+
+/* !Background Blob (currently removed for causing lag!)
+.backgroundBlob{
+position: absolute;
+z-index: 0;
+height: 200%;
+width: 100%;
+opacity: 0%;
+animation: backgroundBlobAppear 1s 4s ease forwards;
+}
+
+@keyframes backgroundBlobAppear{
+0%{
+    opacity: 0%;
+}
+100%{
+    opacity: 50%;
+}
+}*/
+
+/* Eric Zheng Logo */
+.logo{
+    position: absolute;
+    z-index: 0;
+}
+
+.Eric{
+    position: absolute;
+    animation: fromRight 1s ease forwards;
+    opacity: 0%;
+}
+
+.Zheng{
+    position: absolute;
+    animation: fromLeft 1s ease forwards;
+    opacity: 0%;
+}
+
+/* Line Animation of the Top and the Bottom */
+.lineAnimationTop{
+    animation: movingLineTop 2.5s ease forwards;
+    stroke:#13795b; 
+    stroke-width:2;
+    stroke-linecap: round;
+}
+
+.lineAnimationBottom{
+    animation: movingLineBottom 2.5s ease forwards;
+    stroke:#1aa179;
+    stroke-width:2;
+    stroke-linecap: round;
+}
+
+/* Navigation Bar Item */
+.navItem{
+    font-family: "Orbitron"; 
+    opacity: 0%;
+    animation: textRising 1s 1.8s ease-in-out forwards;
+}
+
+.navItem a:hover, text:hover{
+    z-index: 3;
+    opacity: 85%;
+    text-decoration-line:underline ;
+}
+
+.navItem a:focus{
+    outline-style: none;
+}
+
+/* Cursor animations and properties */
+@keyframes moveCursorRight{
+    0% {
+        transform: translate(-50%, 32%);
+        opacity: 100%;
+    }
+    90% {
+        transform: translate(4%, 32%);
+        opacity: 100%;
+    }
+    99.9% {
+        transform: translate(4%, 32%);
+        opacity: 100%;
+    }
+    100% {
+        transform: translate(4%, 32%);
+        opacity: 0%;
+    }
+}
+
+@keyframes moveCursorTextRight{
+    0% {
+        transform: translate(5%, 28%);
+        opacity: 100%;
+    }
+    50% {
+        transform: translate(5%, 28%);
+        opacity: 100%;
+    }
+    100% {
+        transform: translate(41%, 28%);
+        opacity: 100%;
+    }
+}
+
+@keyframes textBlinkingLeft{
+    0% {
+        opacity: 100%;
+    }
+    19.9%{
+        opacity: 100%;
+    }
+    20%{
+        opacity: 0%;
+    }
+    39.9%{
+        opacity: 0%;
+    }
+    40%{
+        opacity: 100%;
+    }
+    59.9%{
+        opacity: 100%;
+    }
+    60% {
+        opacity: 0%;
+    }
+    79.9%{
+        opacity: 00%;
+    }
+    80% {
+        opacity: 100%;
+    }
+    99.9%{
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+@keyframes textBlinkingRight{
+    0% {
+        opacity: 0%;
+    }
+    49.9%{
+        opacity: 0%;
+    }
+    50%{
+        opacity: 100%;
+    }
+    100% {
+        opacity: 100%;
+}
+}
+
+@keyframes highlighterRight{
+    0%{
+        width: 6.2%;
+    }
+    14.9%{
+        width: 6.2%;
+    }
+    15%{
+        width: 12.4%;
+    }
+    22.9%{
+        width: 12.4%;
+    }
+    23%{
+        width: 18.6%;
+    }
+    29.9%{
+        width: 18.6%;
+    }
+    30%{
+        width: 24.8%;
+    }
+    37.9%{
+        width: 24.8%;
+    }
+    38%{
+        width: 31%;
+        opacity: 30%;
+    }
+    99.9%{
+        width: 31%;
+        opacity: 30%;
+    }
+    100%{
+        width: 31%;
+        opacity: 0%;
+    }
+}
+
+.cursorRight{
+    fill: #13795b;
+    opacity: 0%;
+    animation: moveCursorRight 3s 1s ease-out forwards;
+}
+
+.cursorTextRight{
+    fill: #13795b;
+    opacity: 0%;
+    animation: moveCursorTextRight 6s 4s ease forwards;
+}
+
+.highlighter{
+    opacity: 30%;
+    fill: yellow;
+    width: 0%;
+    height: 16%;
+    transform: translate(9.5%, 25%);
+    animation: highlighterRight 3s 7s ease forwards;
+}
+
+.textBlinking1{
+    stroke: #13795b;
+    stroke-width: 1.5px;
+    opacity: 0%;
+    animation: textBlinkingLeft 2.5s 4.2s linear forwards;
+
+}
+.textBlinking2{
+    stroke: #13795b;
+    stroke-width: 1.5px;
+    opacity: 0%;
+    animation: textBlinkingRight 1s 10s ease-out forwards infinite;
+}
+
+/* About page properties */
+#About{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.aboutBottom{
+    position: absolute;
+    height: 100vh;
+    width: 1vw;
+    transform: translate(0, -100vh);
+}
+/*
+.aboutBox{
+    
+    background-color: #a6e9d5;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 25p;
+    
+}
+*/

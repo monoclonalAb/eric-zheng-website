@@ -1,0 +1,76 @@
+//@use '/static/node_modules/bootstrap/scss/variables'
+
+$green:   #198754 !default;
+$teal:    #20c997 !default;
+
+$green-100: tint-color($green, 80%) !default;
+$green-200: tint-color($green, 60%) !default;
+$green-300: tint-color($green, 40%) !default;
+$green-400: tint-color($green, 20%) !default;
+$green-500: $green !default;
+$green-600: shade-color($green, 20%) !default;
+$green-700: shade-color($green, 40%) !default;
+$green-800: shade-color($green, 60%) !default;
+$green-900: shade-color($green, 80%) !default;
+
+$greens: (
+  "100": $green-100,
+  "200": $green-200,
+  "300": $green-300,
+  "400": $green-400,
+  "500": $green-500,
+  "600": $green-600,
+  "700": $green-700,
+  "800": $green-800,
+  "900": $green-900
+) !default;
+
+$teal-100: tint-color($teal, 80%) !default;
+$teal-200: tint-color($teal, 60%) !default;
+$teal-300: tint-color($teal, 40%) !default;
+$teal-400: tint-color($teal, 20%) !default;
+$teal-500: $teal !default;
+$teal-600: shade-color($teal, 20%) !default;
+$teal-700: shade-color($teal, 40%) !default;
+$teal-800: shade-color($teal, 60%) !default;
+$teal-900: shade-color($teal, 80%) !default;
+
+$teals: (
+  "100": $teal-100,
+  "200": $teal-200,
+  "300": $teal-300,
+  "400": $teal-400,
+  "500": $teal-500,
+  "600": $teal-600,
+  "700": $teal-700,
+  "800": $teal-800,
+  "900": $teal-900
+) !default;
+
+@each $key, $value in $greens {
+    .bg-green-#{$key}{
+        background-color: $value !important;
+    }
+
+    .text-green-#{$key}{
+        color: $value !important;
+    }
+
+    .border-green-#{$key}{
+        border-color: $value !important;
+    }
+}
+
+@each $key, $value in $teals {
+    .bg-teal-#{$key}{
+        background-color: $value !important;
+    }
+
+    .text-teal-#{$key}{
+        color: $value !important;
+    }
+
+    .border-teal-#{$key}{
+        border-color: $value !important;
+    }
+}

@@ -233,10 +233,10 @@
         39%{
             width: 65.6%;
         }
-        55.999%{
+        54.799%{
             width: 65.6%;
         }
-        56%{
+        54.8%{
             width: 82%;
         }
         99.999%{
@@ -521,10 +521,10 @@
         39%{
             width: 24.8%;
         }
-        55.999%{
+        54.799%{
             width: 24.8%;
         }
-        56%{
+        54.8%{
             width: 31%;
             opacity: 30%;
         }
@@ -577,7 +577,7 @@
 
 /* General CSS declarations */
 html{
-    scroll-behavior:smooth;;
+    scroll-behavior:smooth;
     position: relative;
 }
 
@@ -588,7 +588,7 @@ body{
 main{
     height: 200vh;
     overflow-y: hidden;
-    background-color: #97d2bb;
+    background-color: #66a693;
 }
 
 h2{
@@ -601,8 +601,44 @@ p{
     color: #0d503c;
 }
 
-/* For centered elements */
+/*Javascript Hidden and Show Animations*/
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translate(-100%, 0);
+    transition: all 1s;
+}
 
+.hidden:has(.right) {
+    opacity: 100;
+    filter: blur(5px);
+    transform: translate(10%, 0);
+    transition: all 1s;
+}   
+
+.hidden.time_200{
+    transition-delay: 100ms;
+}
+
+.hidden.time_400{
+    transition-delay: 200ms;
+}
+
+.hidden.time_600{
+    transition-delay: 300ms;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0, 0);
+}
+
+@media(prefers-reduced-motion){
+    .hidden {
+        transition: none;
+    }
+}
 
 /*Background*/
 .background{
@@ -616,8 +652,16 @@ background:
     background-repeat: repeat;
 }
 
-/*Wave Animation*/
+/*Header Area*/
+.header{
+    height: 100vh;
+    width: 100vw;
+    position: relative; 
+    overflow-x: hidden; 
+    overflow-y: hidden;
+}
 
+/*Wave Animation*/
 .backgroundWave{
     position: absolute;
     z-index: 0;
@@ -706,7 +750,7 @@ animation: backgroundBlobAppear 1s 4s ease forwards;
     stroke-linecap: round;
 }
 
-/* Navigation Bar Item */
+/* Navigation Bar Items */
 .navItem{
     font-family: "Orbitron"; 
     opacity: 0%;
@@ -719,9 +763,12 @@ animation: backgroundBlobAppear 1s 4s ease forwards;
     text-decoration-line:underline ;
 }
 
-.navItem a:focus{
-    outline-style: none;
+.navItem a:focus-visible{
+    outline-style: outset;
+    outline-width: 1px;
+    outline-color: teal;
 }
+
 
 /* About page properties */
 #About{
@@ -729,15 +776,19 @@ animation: backgroundBlobAppear 1s 4s ease forwards;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    position: relative; 
+    z-index: 3; 
 }
 
-.aboutBottom{
-    position: absolute;
-    height: 100vh;
-    width: 1vw;
-    transform: translate(0, -100vh);
-}
+/* Projects page properties */
 
+#Projects{
+    position: relative; 
+    background-color: #66a693;
+    overflow-x:hidden; 
+    overflow-y:hidden; 
+    text-align: right;
+}
 /*
 .aboutBox{
     

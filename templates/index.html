@@ -17,10 +17,35 @@
     <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap'" rel="stylesheet">
     <!--link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/bootstrap/dist/css/bootstrap.css') }}"-->
+    <script>
+  
+      //Get all the hyperlink elements
+      var links = document.getElementsByTagName("a");
+    
+      //Browse the previously created array
+      Array.prototype.forEach.call(links, function(elem, index) {
+        //Get the hyperlink target and if it refers to an id go inside condition
+        var elemAttr = elem.getAttribute("href");
+        if(elemAttr && elemAttr.includes("#")) {
+          //Replace the regular action with a scrolling to target on click
+          elem.addEventListener("click", function(ev) {
+            ev.preventDefault();
+            //Scroll to the target element using replace() and regex to find the href's target id
+            document.getElementById(elemAttr.replace(/#/g, "")).scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest"
+                });
+          });
+        }
+      });
+    </script>
+
+    <script defer src="../static/javascript/scripts.js"></script>
   </head>
 
   <body class="background">
-    <div class="cover-container-fluid h-100 w-100" style="position: relative;">
+    <div class="cover-container-fluid header">
       <!--div class="backgroundBlob">
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" height="100%" width="100%">
           <g style="transform: translate(-60%, -50%)">
@@ -39,15 +64,12 @@
       </div-->
       <!-- Waves -->
       <div class="backgroundWave">
-        <svg viewBox="0 0 3600 800" width="600%" height="100%" style="transform: translate(-41.7%, 31%)">
+        <svg viewBox="0 0 1500 800" width="600%" height="100%" style="transform: translate(-52.7%, 28%)">
           <path class="wave" fill="#c9ffe5" d="M0 319L31.5 316C63 313 126 307 189.2 317C252.3 327 315.7 353 378.8 364C442 375 505 371 568.2 371.3C631.3 371.7 694.7 376.3 757.8 375.8C821 375.3 884 369.7 947.2 367.5C1010.3 365.3 1073.7 366.7 1136.8 357.8C1200 349 1263 330 1326.2 337C1389.3 344 1452.7 377 1515.8 378.7C1579 380.3 1642 350.7 1705.2 341.5C1768.3 332.3 1831.7 343.7 1894.8 348.2C1958 352.7 2021 350.3 2084.2 341.8C2147.3 333.3 2210.7 318.7 2273.8 323C2337 327.3 2400 350.7 2463.2 367C2526.3 383.3 2589.7 392.7 2652.8 399.8C2716 407 2779 412 2842.2 412C2905.3 412 2968.7 407 3031.8 394.5C3095 382 3158 362 3221.2 354.7C3284.3 347.3 3347.7 352.7 3410.8 351.7C3474 350.7 3537 343.3 3568.5 339.7L3600 336L3600 601L3568.5 601C3537 601 3474 601 3410.8 601C3347.7 601 3284.3 601 3221.2 601C3158 601 3095 601 3031.8 601C2968.7 601 2905.3 601 2842.2 601C2779 601 2716 601 2652.8 601C2589.7 601 2526.3 601 2463.2 601C2400 601 2337 601 2273.8 601C2210.7 601 2147.3 601 2084.2 601C2021 601 1958 601 1894.8 601C1831.7 601 1768.3 601 1705.2 601C1642 601 1579 601 1515.8 601C1452.7 601 1389.3 601 1326.2 601C1263 601 1200 601 1136.8 601C1073.7 601 1010.3 601 947.2 601C884 601 821 601 757.8 601C694.7 601 631.3 601 568.2 601C505 601 442 601 378.8 601C315.7 601 252.3 601 189.2 601C126 601 63 601 31.5 601L0 601Z"></path>
           <path class="wave" fill="#b0e8d0" d="M0 409L31.5 413.3C63 417.7 126 426.3 189.2 422.2C252.3 418 315.7 401 378.8 388.8C442 376.7 505 369.3 568.2 371.7C631.3 374 694.7 386 757.8 386.2C821 386.3 884 374.7 947.2 367C1010.3 359.3 1073.7 355.7 1136.8 361.5C1200 367.3 1263 382.7 1326.2 388.7C1389.3 394.7 1452.7 391.3 1515.8 388.7C1579 386 1642 384 1705.2 379.5C1768.3 375 1831.7 368 1894.8 373C1958 378 2021 395 2084.2 394.7C2147.3 394.3 2210.7 376.7 2273.8 375.8C2337 375 2400 391 2463.2 394.2C2526.3 397.3 2589.7 387.7 2652.8 378.8C2716 370 2779 362 2842.2 370.7C2905.3 379.3 2968.7 404.7 3031.8 408C3095 411.3 3158 392.7 3221.2 396.3C3284.3 400 3347.7 426 3410.8 434.8C3474 443.7 3537 435.3 3568.5 431.2L3600 427L3600 601L3568.5 601C3537 601 3474 601 3410.8 601C3347.7 601 3284.3 601 3221.2 601C3158 601 3095 601 3031.8 601C2968.7 601 2905.3 601 2842.2 601C2779 601 2716 601 2652.8 601C2589.7 601 2526.3 601 2463.2 601C2400 601 2337 601 2273.8 601C2210.7 601 2147.3 601 2084.2 601C2021 601 1958 601 1894.8 601C1831.7 601 1768.3 601 1705.2 601C1642 601 1579 601 1515.8 601C1452.7 601 1389.3 601 1326.2 601C1263 601 1200 601 1136.8 601C1073.7 601 1010.3 601 947.2 601C884 601 821 601 757.8 601C694.7 601 631.3 601 568.2 601C505 601 442 601 378.8 601C315.7 601 252.3 601 189.2 601C126 601 63 601 31.5 601L0 601Z"></path>
           <path class="wave" fill="#97d2bb" d="M0 465L31.5 459.5C63 454 126 443 189.2 445.2C252.3 447.3 315.7 462.7 378.8 469C442 475.3 505 472.7 568.2 464.8C631.3 457 694.7 444 757.8 438.2C821 432.3 884 433.7 947.2 433.3C1010.3 433 1073.7 431 1136.8 430.8C1200 430.7 1263 432.3 1326.2 429.2C1389.3 426 1452.7 418 1515.8 423.5C1579 429 1642 448 1705.2 451.5C1768.3 455 1831.7 443 1894.8 436.2C1958 429.3 2021 427.7 2084.2 427.5C2147.3 427.3 2210.7 428.7 2273.8 438.3C2337 448 2400 466 2463.2 463.2C2526.3 460.3 2589.7 436.7 2652.8 434.3C2716 432 2779 451 2842.2 456.2C2905.3 461.3 2968.7 452.7 3031.8 450.8C3095 449 3158 454 3221.2 453.5C3284.3 453 3347.7 447 3410.8 447C3474 447 3537 453 3568.5 456L3600 459L3600 601L3568.5 601C3537 601 3474 601 3410.8 601C3347.7 601 3284.3 601 3221.2 601C3158 601 3095 601 3031.8 601C2968.7 601 2905.3 601 2842.2 601C2779 601 2716 601 2652.8 601C2589.7 601 2526.3 601 2463.2 601C2400 601 2337 601 2273.8 601C2210.7 601 2147.3 601 2084.2 601C2021 601 1958 601 1894.8 601C1831.7 601 1768.3 601 1705.2 601C1642 601 1579 601 1515.8 601C1452.7 601 1389.3 601 1326.2 601C1263 601 1200 601 1136.8 601C1073.7 601 1010.3 601 947.2 601C884 601 821 601 757.8 601C694.7 601 631.3 601 568.2 601C505 601 442 601 378.8 601C315.7 601 252.3 601 189.2 601C126 601 63 601 31.5 601L0 601Z"></path>
           <path class="wave" fill="#7ebca7" d="M0 461L31.5 464.7C63 468.3 126 475.7 189.2 486C252.3 496.3 315.7 509.7 378.8 516.3C442 523 505 523 568.2 520.2C631.3 517.3 694.7 511.7 757.8 507C821 502.3 884 498.7 947.2 492.2C1010.3 485.7 1073.7 476.3 1136.8 480.3C1200 484.3 1263 501.7 1326.2 508.5C1389.3 515.3 1452.7 511.7 1515.8 508.3C1579 505 1642 502 1705.2 498.3C1768.3 494.7 1831.7 490.3 1894.8 486C1958 481.7 2021 477.3 2084.2 474.3C2147.3 471.3 2210.7 469.7 2273.8 468.7C2337 467.7 2400 467.3 2463.2 473.7C2526.3 480 2589.7 493 2652.8 497.3C2716 501.7 2779 497.3 2842.2 498.7C2905.3 500 2968.7 507 3031.8 501.7C3095 496.3 3158 478.7 3221.2 477.8C3284.3 477 3347.7 493 3410.8 492.5C3474 492 3537 475 3568.5 466.5L3600 458L3600 601L3568.5 601C3537 601 3474 601 3410.8 601C3347.7 601 3284.3 601 3221.2 601C3158 601 3095 601 3031.8 601C2968.7 601 2905.3 601 2842.2 601C2779 601 2716 601 2652.8 601C2589.7 601 2526.3 601 2463.2 601C2400 601 2337 601 2273.8 601C2210.7 601 2147.3 601 2084.2 601C2021 601 1958 601 1894.8 601C1831.7 601 1768.3 601 1705.2 601C1642 601 1579 601 1515.8 601C1452.7 601 1389.3 601 1326.2 601C1263 601 1200 601 1136.8 601C1073.7 601 1010.3 601 947.2 601C884 601 821 601 757.8 601C694.7 601 631.3 601 568.2 601C505 601 442 601 378.8 601C315.7 601 252.3 601 189.2 601C126 601 63 601 31.5 601L0 601Z"></path>
           <path class="wave" fill="#66a693" d="M0 566L31.5 558.3C63 550.7 126 535.3 189.2 531C252.3 526.7 315.7 533.3 378.8 540.8C442 548.3 505 556.7 568.2 557.7C631.3 558.7 694.7 552.3 757.8 551.7C821 551 884 556 947.2 553.8C1010.3 551.7 1073.7 542.3 1136.8 535.5C1200 528.7 1263 524.3 1326.2 529.8C1389.3 535.3 1452.7 550.7 1515.8 549.2C1579 547.7 1642 529.3 1705.2 526.2C1768.3 523 1831.7 535 1894.8 544.5C1958 554 2021 561 2084.2 557.2C2147.3 553.3 2210.7 538.7 2273.8 531.7C2337 524.7 2400 525.3 2463.2 530.3C2526.3 535.3 2589.7 544.7 2652.8 545.8C2716 547 2779 540 2842.2 540.5C2905.3 541 2968.7 549 3031.8 547.2C3095 545.3 3158 533.7 3221.2 533.2C3284.3 532.7 3347.7 543.3 3410.8 549.2C3474 555 3537 556 3568.5 556.5L3600 557L3600 601L3568.5 601C3537 601 3474 601 3410.8 601C3347.7 601 3284.3 601 3221.2 601C3158 601 3095 601 3031.8 601C2968.7 601 2905.3 601 2842.2 601C2779 601 2716 601 2652.8 601C2589.7 601 2526.3 601 2463.2 601C2400 601 2337 601 2273.8 601C2210.7 601 2147.3 601 2084.2 601C2021 601 1958 601 1894.8 601C1831.7 601 1768.3 601 1705.2 601C1642 601 1579 601 1515.8 601C1452.7 601 1389.3 601 1326.2 601C1263 601 1200 601 1136.8 601C1073.7 601 1010.3 601 947.2 601C884 601 821 601 757.8 601C694.7 601 631.3 601 568.2 601C505 601 442 601 378.8 601C315.7 601 252.3 601 189.2 601C126 601 63 601 31.5 601L0 601Z"></path>
-          <g style="transform: translate(0%, 75%)">  
-            <path class="waveTop" fill="#66a693" xmlns="http://www.w3.org/2000/svg" d="M0 77L28.5 76.7C57 76.3 114 75.7 171.2 68.8C228.3 62 285.7 49 342.8 55.2C400 61.3 457 86.7 514.2 85.2C571.3 83.7 628.7 55.3 685.8 52.8C743 50.3 800 73.7 857.2 84.3C914.3 95 971.7 93 1028.8 99.8C1086 106.7 1143 122.3 1200 131.8C1257 141.3 1314 144.7 1371.2 141.7C1428.3 138.7 1485.7 129.3 1542.8 118.5C1600 107.7 1657 95.3 1714.2 81.3C1771.3 67.3 1828.7 51.7 1885.8 59.8C1943 68 2000 100 2057.2 119C2114.3 138 2171.7 144 2228.8 126.8C2286 109.7 2343 69.3 2400 59.7C2457 50 2514 71 2571.2 73.2C2628.3 75.3 2685.7 58.7 2742.8 65.5C2800 72.3 2857 102.7 2914.2 101.2C2971.3 99.7 3028.7 66.3 3085.8 61.5C3143 56.7 3200 80.3 3257.2 83.5C3314.3 86.7 3371.7 69.3 3428.8 60.2C3486 51 3543 50 3571.5 49.5L3600 49L3600 0L3571.5 0C3543 0 3486 0 3428.8 0C3371.7 0 3314.3 0 3257.2 0C3200 0 3143 0 3085.8 0C3028.7 0 2971.3 0 2914.2 0C2857 0 2800 0 2742.8 0C2685.7 0 2628.3 0 2571.2 0C2514 0 2457 0 2400 0C2343 0 2286 0 2228.8 0C2171.7 0 2114.3 0 2057.2 0C2000 0 1943 0 1885.8 0C1828.7 0 1771.3 0 1714.2 0C1657 0 1600 0 1542.8 0C1485.7 0 1428.3 0 1371.2 0C1314 0 1257 0 1200 0C1143 0 1086 0 1028.8 0C971.7 0 914.3 0 857.2 0C800 0 743 0 685.8 0C628.7 0 571.3 0 514.2 0C457 0 400 0 342.8 0C285.7 0 228.3 0 171.2 0C114 0 57 0 28.5 0L0 0Z" stroke-linecap="round" stroke-linejoin="miter"/>
-          </g>
         </svg>
       </div>
       
@@ -340,27 +362,47 @@
     </div>
     
     <main>
-      <div class="container-sm">
-        <div id="About" class="col-lg-4 mx-auto" style="position: relative; z-index: 3; text-align: center;">
-          <div class="aboutBox">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="#06281e" class="mt-5 mb-2 bi bi-paragraph" viewBox="0 0 16 16">
+      <div class = "container-xxl"> 
+        <div id="About" class="container-sm">
+          <div class="col-sm-7 mx-auto mt-3 pt-3 pb-3 mb-3 text-md-left">
+            <svg class = "hidden" xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="#06281e" class="mt-5 mb-2 bi bi-paragraph" viewBox="0 0 16 16">
               <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
               <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2v9.255S12 12 8 12s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h5.5v2z"/>
             </svg>
-            <h2 class="display-5 mb-3 fw-semibold lh-sm">About Me:</h2>
-            <p class="fw-normal mb-5">
+            <h2 class="display-5 mb-3 fw-semibold lh-sm hidden time_200">About Me:</h2>
+            <p class="fw-normal mb-5 hidden time_400">
               I am a <b>first-year Computer Science student</b> at the <strong>University of Auckland</strong> who is eager to expand my knowledge on topics such as <b>algorithms</b> and <b>artificial intelligence</b>.
             </p>
           </div>
         </div>
-        <div class="aboutBottom">
-          <svg viewBox="0 0 3600 600" width="3600vw" height="100vh" style="transform: translate(-48.8%, 0px)" class="mt-5 mb-2 bi bi-paragraph">
-            <path fill="#66a693" d="M0 566L31.5 558.3C63 550.7 126 535.3 189.2 531C252.3 526.7 315.7 533.3 378.8 540.8C442 548.3 505 556.7 568.2 557.7C631.3 558.7 694.7 552.3 757.8 551.7C821 551 884 556 947.2 553.8C1010.3 551.7 1073.7 542.3 1136.8 535.5C1200 528.7 1263 524.3 1326.2 529.8C1389.3 535.3 1452.7 550.7 1515.8 549.2C1579 547.7 1642 529.3 1705.2 526.2C1768.3 523 1831.7 535 1894.8 544.5C1958 554 2021 561 2084.2 557.2C2147.3 553.3 2210.7 538.7 2273.8 531.7C2337 524.7 2400 525.3 2463.2 530.3C2526.3 535.3 2589.7 544.7 2652.8 545.8C2716 547 2779 540 2842.2 540.5C2905.3 541 2968.7 549 3031.8 547.2C3095 545.3 3158 533.7 3221.2 533.2C3284.3 532.7 3347.7 543.3 3410.8 549.2C3474 555 3537 556 3568.5 556.5L3600 557L3600 601L3568.5 601C3537 601 3474 601 3410.8 601C3347.7 601 3284.3 601 3221.2 601C3158 601 3095 601 3031.8 601C2968.7 601 2905.3 601 2842.2 601C2779 601 2716 601 2652.8 601C2589.7 601 2526.3 601 2463.2 601C2400 601 2337 601 2273.8 601C2210.7 601 2147.3 601 2084.2 601C2021 601 1958 601 1894.8 601C1831.7 601 1768.3 601 1705.2 601C1642 601 1579 601 1515.8 601C1452.7 601 1389.3 601 1326.2 601C1263 601 1200 601 1136.8 601C1073.7 601 1010.3 601 947.2 601C884 601 821 601 757.8 601C694.7 601 631.3 601 568.2 601C505 601 442 601 378.8 601C315.7 601 252.3 601 189.2 601C126 601 63 601 31.5 601L0 601Z"></path>
-          </svg>
-        </div>
-      </div>
-      <div class="container-fluid h-100" style="background-color: #66a693;overflow-x:hidden; overflow-y:hidden;">
 
+        <div id="Projects" class="container-sm" >
+          <div class="col-sm-7 mx-auto mt-3 pt-3 pb-3 mb-3 text-md-left">
+            <svg class="hidden right" xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="#06281e" class="mt-5 mb-2 bi bi-paragraph" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8.646 5.646a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 8 8.646 6.354a.5.5 0 0 1 0-.708zm-1.292 0a.5.5 0 0 0-.708 0l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L5.707 8l1.647-1.646a.5.5 0 0 0 0-.708z"/>
+              <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+              <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+            </svg>
+            <h2 class="display-5 mb-3 fw-semibold lh-sm hidden right time-200">Projects:</h2>
+            <p class="fw-normal mb-5 hidden right time-400">
+              A carousel of current and past projects:
+            </p>
+          </div>
+        </div>
+
+        <div id="Contact" class="container-sm h-100" >
+          <div class="aboutBox">
+            <div class="col-sm-10 mx-auto mt-3 pt-3 pb-3 mb-3 text-md-left"></div>
+              <svg class="hidden" xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="#06281e" class="mt-5 mb-2 bi bi-paragraph" viewBox="0 0 16 16">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+              </svg>
+              <h2 class="display-5 mb-3 fw-semibold lh-sm hidden">Contact Me:</h2>
+              <p class="fw-normal mb-5 hidden">
+                Place form here:
+              </p>
+            </div>
+          <div class="col-sm-7 mx-auto mt-3 pt-3 pb-3 mb-3 text-md-left">
+        </div>
       </div>
         <!--section id="Projects" class="col-lg-6 offset-lg-6 mb-5" style="position: relative; z-index: 4; text-align: right;">
           <div class="d-inline-block mt-5 mb-3" >
@@ -371,55 +413,10 @@
             </svg>
           </div>
           <h2 class="display-5 mb-3 fw-semibold lh-sm">Projects</h2>
-          <p class="lead fw-normal">
-            Python projects:
-          </p>
-          <div id="carouselExampleCaptions" class="carousel slide" style="height: 400px; width: 100%;">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <svg class="bd-placeholder-img" width="100%" height="400px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <rect width="100%" height="100%" fill="#1aa179"></rect>
-                </svg>
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>Some representative placeholder content for the first slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <svg class="bd-placeholder-img" width="100%" height="400px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <rect width="100%" height="100%" fill="#1aa179"></rect>
-                </svg>
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>Some representative placeholder content for the second slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <svg class="bd-placeholder-img" width="100%" height="400px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <rect width="100%" height="100%" fill="#1aa179"></rect>
-                </svg>
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                </div>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+          
+          
         </section>
-        <section id="Contact" class="col-lg-6 mb-5" style="position: relative; z-index: 4; text-align: left;">
+        <section-- id="Contact" class="col-lg-6 mb-5" style="position: relative; z-index: 4; text-align: left;">
           <div class="d-inline-block mt-5 mb-3" >
             <svg xmlns="http://www.w3.org/2000/svg" width="20%" height="20%" fill="#06281e" class="bi bi-paragraph" viewBox="0 0 16 16">
               <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z"/>

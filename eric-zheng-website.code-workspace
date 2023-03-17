@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501,
+		"python.defaultInterpreterPath": "C:/Users/ericz/Virtual Environments/3.11.1 Eric Zheng Website/Scripts/python.exe",
+        "code-runner.executorMap": {"python": "call C:/Users/ericz/Virtual Environments/3.11.1 Eric Zheng Website/Scripts/python.exeactivate.bat && python -u"}
+	}
+}
